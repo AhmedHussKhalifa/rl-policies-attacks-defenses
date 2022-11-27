@@ -4,10 +4,11 @@
 python atari_dqn.py --task "PongNoFrameskip-v4"
 
 # **Train** A2C agent to play Breakout.
-python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --algo a2c
+python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --algo a2c --num-processes 1
+python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --algo a2c 
 
 # **Train** PPO agent to play Breakout.
-python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4"--algo ppo --use-gae --lr 2.5e-4 --clip-param 0.1 --value-loss-coef 0.5 --num-processes 8 --num-steps 128 --num-mini-batch 4 --log-interval 1 --use-linear-lr-decay --entropy-coef 0.01
+python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --algo ppo --use-gae --lr 2.5e-4 --clip-param 0.1 --value-loss-coef 0.5 --num-processes 8 --num-steps 128 --num-mini-batch 4 --log-interval 1 --use-linear-lr-decay --entropy-coef 0.01
 
 # ---------------------------------------------------------
 #  Test Agents 
@@ -26,7 +27,6 @@ python atari_dqn.py --task "PongNoFrameskip-v4" --invert_reward --epoch 1
 
 # ---------------------------------------------------------
 #  Adversial Training Agents 
-
 
 # **Defend** Pong DQN agent with **adversarial training**.
 python atari_adversarial_training_dqn.py --task "PongNoFrameskip-v4" --resume_path "log/PongNoFrameskip-v4/dqn/policy.pth" --logdir log_def --eps 0.01 --image_attack fgm

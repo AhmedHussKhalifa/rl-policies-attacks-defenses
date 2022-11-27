@@ -1,7 +1,17 @@
+# conda install pytorch torchvision -c soumith
+# pip install -r requirements.txt
+# conda install -c conda-forge gym-atari
+# sudo apt install cmake libz-dev
+# pip uninstall gym atari-py ale-py
+# pip install gym[atari]
+# conda install pillow=6.1
+
+
 git+https://github.com/thu-ml/tianshou@cd481423dc4e63efda83f10213cfbe8680e71b76
 advertorch
 gym==0.22.0
 gym[atari]==0.22.0
+gym[accept-rom-license]==0.22.0
 opencv-python
 numpy
 matplotlib
