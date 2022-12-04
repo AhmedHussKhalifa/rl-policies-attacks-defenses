@@ -4,7 +4,6 @@
 python atari_dqn.py --task "PongNoFrameskip-v4"
 
 # **Train** A2C agent to play Breakout.
-python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --algo a2c --num-processes 1
 python atari_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --algo a2c 
 
 # **Train** PPO agent to play Breakout.
@@ -35,6 +34,9 @@ python atari_adversarial_training_dqn.py --task "PongNoFrameskip-v4" --resume_pa
 python atari_adversarial_training_dqn.py --task "PongNoFrameskip-v4" --resume_path "log_def/PongNoFrameskip-v4/dqn/policy.pth" --eps 0.01 --image_attack fgm --target_model_path log/PongNoFrameskip-v4/dqn/policy.pth --watch --test_num 10
 
 # **Defend** Pong A2C agent with **adversarial training**.
+
+python atari_adversarial_training_a2c_ppo.py --env-name "BreakoutNoFrameskip-v4" --num-env-steps 10000000 --algo a2c --resume_path "log/BreakoutNoFrameskip-v4/a2c/policy.pth" --save-dir log_def --eps 0.01 --image_attack fgm --num-processes 16 --test_num 10
+
 python atari_adversarial_training_a2c_ppo.py --env-name "PongNoFrameskip-v4" --num-env-steps 10000000 --algo a2c --resume_path "log/PongNoFrameskip-v4/a2c/policy.pth" --save-dir log_def --eps 0.01 --image_attack fgm --num-processes 16 --test_num 10
 
 # **Test** defended Pong A2C agent.

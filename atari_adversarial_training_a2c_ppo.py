@@ -96,7 +96,7 @@ def main():
                     break
         if n_attacks == 0:
             n_attacks = 1
-        print("Evaluation using {} episodes: mean reward {:.5f}, succ_atks(%) {:.3f}\n".format(
+        print("{} --> Evaluation using {} episodes: mean reward {:.5f}, succ_atks(%) {:.3f}\n".format(args.env_name,
             n_ep, tot_rew / n_ep, succ_attacks / n_attacks))
 
     if args.watch:
